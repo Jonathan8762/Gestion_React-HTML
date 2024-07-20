@@ -1,40 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
 import { Drawer, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import HomeIcon from '@mui/icons-material/Home';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import ArticleIcon from '@mui/icons-material/Article';
-import Inventory2Icon from '@mui/icons-material/Inventory2';
 
-interface MenuLateralProps {
-  open: boolean;
-  toggleDrawer: () => void;
+const Inicio = () => {
+  return (
+    <div className="inicio-container">
+        
+      <h1>Bienvenido al Sistema de Manejo de Inventario</h1>
+      <p>Aquí puedes administrar tus productos, movimientos y generar reportes.</p>
+      <p>Comienza explorando las secciones desde el menú lateral.</p>
+      {/* Aquí podrías agregar más contenido según tus necesidades */}
+    </div>
+  )
 }
 
-const MenuLateral: React.FC<MenuLateralProps> = ({ open, toggleDrawer }) => {
-  return (
-    <Drawer anchor="left" open={open} onClose={toggleDrawer}>
-      <List>
-        <ListItem button component={Link} to="/Inicio">
-          <ListItemIcon><HomeIcon /></ListItemIcon>
-          <ListItemText primary="Inicio" />
-        </ListItem>
-        <ListItem button component={Link} to="/Productos">
-          <ListItemIcon>< Inventory2Icon /></ListItemIcon>
-          <ListItemText primary="Productos" />
-        </ListItem>
-        <ListItem button component={Link} to="/Movimientos">
-          <ListItemIcon><ArticleIcon /></ListItemIcon>
-          <ListItemText primary="Movimientos" />
-        </ListItem>
-        <ListItem button component={Link} to="/NuevoMovimento">
-          <ListItemIcon><AddCircleIcon /></ListItemIcon>
-          <ListItemText primary="Reportes" />
-        </ListItem>
-
-      </List>
-    </Drawer>
-  );
-};
-
-export default MenuLateral;
+export default Inicio

@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom';
 import { Drawer, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
-import AdjustIcon from '@mui/icons-material/Adjust';
-import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import ArticleIcon from '@mui/icons-material/Article';
-import { ShoppingCart } from '@mui/icons-material';
 import Inventory2Icon from '@mui/icons-material/Inventory2';
 
 interface MenuLateralProps {

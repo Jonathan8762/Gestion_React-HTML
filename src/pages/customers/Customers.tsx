@@ -5,7 +5,7 @@ import ModalComponent from '../../components/ModalCom';
 
 const Customers = () => {
   const showModal = () => {
-    //NiceModal.show(ModalComponent);
+    NiceModal.show(ModalComponent);
   };
 
   return (

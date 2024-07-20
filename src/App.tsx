@@ -4,8 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import MenuLateral from './components/MenuLateral';
 import Customers from './pages/customers/Customers';
-
-// Importar bootstrap para usar en las tablas
+import Inicio from './pages/customers/Inicio';
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const App: React.FC = () => {
@@ -22,7 +21,7 @@ const App: React.FC = () => {
         <MenuLateral open={drawerOpen} toggleDrawer={toggleDrawer} />
         <section id="contenido">
           <Routes>
-            <Route path="/Inicio" element={<h1>Inicio</h1>} />
+            <Route path="/Inicio" element={<Inicio/>} />
             <Route path="/Productos" element={<Customers />} />
             <Route path="/Movimientos" element={<h1>Movimientos</h1>} />
             <Route path="/Reportes" element={<h1>Reportes</h1>} />
