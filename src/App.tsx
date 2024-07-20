@@ -1,31 +1,38 @@
+import React, { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import Header from './components/Header';
+import MenuLateral from './components/MenuLateral';
+import Customers from './pages/customers/Customers';
 
-import './App.css'
-import MenuLateral from './components/MenuLateral'
-import heder from './components/Header'
-import Header from './components/Header'
-import { Route, Routes } from 'react-router-dom'
+// Importar bootstrap para usar en las tablas
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-function App() {
+const App: React.FC = () => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    setDrawerOpen(!drawerOpen);
+  };
 
   return (
     <>
-    <Header></Header>
-   <main>
-        <aside>
-          <MenuLateral></MenuLateral>
-
-        </aside>
+      <Header toggleDrawer={toggleDrawer} />
+      <main>
+        <MenuLateral open={drawerOpen} toggleDrawer={toggleDrawer} />
         <section id="contenido">
-         <Routes>
-          <Route path="/" element={<h1>Inicio</h1>} />
-          <Route path="/productos" element={<h1>Productos</h1>} />
-          <Route path="/clientes" element={<h1>Clientes</h1>} />
-          <Route path="/ventas" element={<h1>Ventas</h1>} />        
-        </Routes>
-        </section>
-      </main><script type="module" src="/main.js"></script></>
-  
-  )
-}
+          <Routes>
+            <Route path="/Inicio" element={<h1>Inicio</h1>} />
+            <Route path="/Productos" element={<Customers />} />
+            <Route path="/Movimientos" element={<h1>Movimientos</h1>} />
+            <Route path="/Reportes" element={<h1>Reportes</h1>} />
 
-export default App
+          </Routes>
+
+        </section>
+      </main>
+    </>
+  );
+};
+
+export default App;
